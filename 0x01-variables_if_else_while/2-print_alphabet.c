@@ -6,8 +6,10 @@
  */
 int main(void)
 {
+	char c;
+
 	/* like a fucking chad */
-	for (char c = 'a'; c <= 'z'; putchar(c++))
+	for (c = 'a'; c <= 'z'; putchar(c++))
 		;
 	putchar('\n');
 	return (0);

@@ -6,9 +6,11 @@
  */
 int main(void)
 {
-	for (char i = '0'; i <= '9'; putchar(i++))
+	char i;
+
+	for (i = '0'; i <= '9'; putchar(i++))
 		;
-	for (char i = 'a'; i <= 'f'; putchar(i++))
+	for (i = 'a'; i <= 'f'; putchar(i++))
 		;
 	putchar('\n');
 	return (0);
