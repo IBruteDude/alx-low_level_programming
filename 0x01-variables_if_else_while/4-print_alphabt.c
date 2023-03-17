@@ -8,7 +8,8 @@ int main(void)
 {
 	/* like a fucking chad */
 	for (char c = 'a'; c <= 'z'; putchar(c++))
-		if(c == 'e' || c == 'q') c++;
+		if (c == 'e' || c == 'q')
+			c++;
 	putchar('\n');
 	return (0);
 }
