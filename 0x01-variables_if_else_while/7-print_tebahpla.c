@@ -7,7 +7,7 @@
 int main(void)
 {
 	/* like a fucking chad */
-	for (char c = 'z'; c <= 'a'; putchar(c--))
+	for (char c = 'z'; c >= 'a'; putchar(c--))
 		;
 	putchar('\n');
 	return (0);
