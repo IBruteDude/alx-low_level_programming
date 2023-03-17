@@ -2,7 +2,7 @@
 
 /**
  * main - Entry code execution point
- * Description: Print comma separated different 1-digit combination
+ * Description: Print comma separated different 2by2-digit combination
  * Return: Exit status
  */
 
@@ -18,10 +18,10 @@ int main(void)
 				putchar(',');
 				putchar(' ');
 			}
-			putchar('0' + (i - (i % 10))/10);
+			putchar('0' + (i - (i % 10)) / 10);
 			putchar('0' + (i % 10));
 			putchar(' ');
-			putchar('0' + (j - (j % 10))/10);
+			putchar('0' + (j - (j % 10)) / 10);
 			putchar('0' + (j % 10));
 		}
 	}
