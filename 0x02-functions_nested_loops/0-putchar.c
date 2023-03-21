@@ -6,11 +6,8 @@
  */
 int main(void)
 {
-	char s[] = "_putchar";
-	int i = 0, size = 8;
+	char s[] = "_putchar\n";
 
-	for (; i < size; _putchar(s[i++]))
-		;
-	_putchar('\n');
+	write(1, s, 9);
 	return (0);
 }
