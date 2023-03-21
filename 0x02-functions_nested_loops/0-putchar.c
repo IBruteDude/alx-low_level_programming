@@ -1,5 +1,4 @@
-#include "main.h"
-
+#include <unistd.h>
 /**
  * main - Entry point to project
  * Return: returns exit status
