@@ -1,4 +1,4 @@
-#include "stdio.h"
+#include "main.h"
 
 /**
  * main - Entry point to project
@@ -6,6 +6,10 @@
  */
 int main(void)
 {
-	puts("_putchar");
+	char s[] = "_putchar";
+	int i = 0; size = 8;
+	for (;i < size; _putchar(s[i++]))
+		;
+	_putchar('\n');
 	return (0);
 }
