@@ -7,7 +7,7 @@
 int main(void)
 {
 	char s[] = "_putchar";
-	int i = 0; size = 8;
+	int i = 0, size = 8;
 	for (;i < size; _putchar(s[i++]))
 		;
 	_putchar('\n');
