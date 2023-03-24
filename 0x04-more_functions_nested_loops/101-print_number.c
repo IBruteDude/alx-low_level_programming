@@ -7,6 +7,7 @@
 void print_number(int n)
 {
 	int i, nth_digit, no = 1, power = 1, min = (n == INT_MIN);
+
 	if (n < 0)
 	{
 		_putchar('-');
@@ -25,5 +26,5 @@ void print_number(int n)
 		_putchar(nth_digit % 10 + '0');
 		power /= 10;
 	}
-	_putchar((min) ? '8' : ((n / power) % 10 + '0'));
+	_putchar((min) ? ('8') : ((n / power) % 10 + '0'));
 }
