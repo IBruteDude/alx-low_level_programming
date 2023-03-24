@@ -12,6 +12,6 @@ int main(void)
 			num /= comp;
 		comp += 2;
 	}
-	printf("%lu\n", comp);
+	printf("%lu\n", 612852475143 % comp);
 	return (0);
 }
