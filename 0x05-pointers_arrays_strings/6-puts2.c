@@ -1,9 +1,9 @@
 #include "main.h"
 /**
- * _puts2 - put stripped string in stdout
+ * puts2 - put stripped string in stdout
  * @str: string NTCS
  */
-void _puts2(char *str)
+void puts2(char *str)
 {
 	/* isn't memory unsafe - won't check one slot out of bound if the and short-circuits first checking */
 	while (*str != 0 && *(str + 1) != 0)
