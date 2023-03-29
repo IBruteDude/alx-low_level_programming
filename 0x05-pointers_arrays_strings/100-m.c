@@ -18,6 +18,8 @@ int main(void)
     printf("%d\n", nb);
     nb = _atoi("214748364");
     printf("%d\n", nb);
+    nb = _atoi("-2147483648");
+    printf("%d\n", nb);
     nb = _atoi("0");
     printf("%d\n", nb);
     nb = _atoi("Suite 402");
