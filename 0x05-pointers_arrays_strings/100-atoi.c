@@ -18,8 +18,9 @@ int _atoi(char *s)
 			neg++;
 		s++;
 	}
-	if (*s == 0)
+	if (*s++ == 0)
 		return (0);
+	dl++;
 	while (dig(*s))
 	{
 		dl++;
@@ -30,8 +31,8 @@ int _atoi(char *s)
 	s -= dl;
 	while (s != p)
 	{
-		pow /= 10;
 		n += pow * (*s - '0');
+		pow /= 10;
 		s++;
 	}
 	return ((neg % 2) ? -n : n);
