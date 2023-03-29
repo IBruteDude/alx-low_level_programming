@@ -36,7 +36,7 @@ int _atoi(char *s)
 		pow /= 10;
 		s++;
 	}
-	if (*s == '8' && (neg % 2))
+	if (*s == '8' && dl == 10 && (neg % 2))
 		return INT_MIN;
 	else
 		n += pow * (*s - '0');
