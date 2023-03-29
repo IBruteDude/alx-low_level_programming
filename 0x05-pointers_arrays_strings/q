@@ -12,8 +12,8 @@ int main(void)
     int a;
     int b;
 
-    b = INT_MIN;
     a = INT_MAX;
+    b = INT_MIN;
     printf("a=%d, b=%d\n", a, b);
     swap_int(&a, &b);
     printf("a=%d, b=%d\n", a, b);
