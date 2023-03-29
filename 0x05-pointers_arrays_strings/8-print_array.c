@@ -6,17 +6,13 @@
  */
 void print_array(int *a, int n)
 {
-	if (n >= 0)
+	if (n > 0)
 	{
 		int i;
 
 		printf("%i", a[0]);
 		for (i = 1; i < n; i++)
 			printf(", %i", a[i]);
-	}
-	else
-	{
-		putchar(0);
 	}
 	putchar('\n');
 }
