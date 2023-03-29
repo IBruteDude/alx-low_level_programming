@@ -4,7 +4,7 @@
 /**
  * _atoi - extract an int from a string
  * @s: input NTCS
- * Return: found int
+ * Return: n if found int, 0 if not
  */
 int _atoi(char *s)
 {
@@ -14,6 +14,8 @@ int _atoi(char *s)
 
 	while (!dig(*s))
 		s++;
+	if (*s == 0)
+		return (0);
 	if (*(s - 1) == '-' && !isspace(*(s - 2)))
 		neg = 1;
 	while (dig(*s))
