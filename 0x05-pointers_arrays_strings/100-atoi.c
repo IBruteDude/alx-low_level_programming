@@ -15,7 +15,7 @@ int _atoi(char *s)
 	while (!dig(*s) && *s != 0)
 	{
 		if (*(s) == '-')
-			neg = 1 - n;
+			neg++;
 		s++;
 	}
 	if (*s == 0)
@@ -34,5 +34,5 @@ int _atoi(char *s)
 		n += pow * (*s - '0');
 		s++;
 	}
-	return ((neg) ? -n : n);
+	return ((neg % 2) ? -n : n);
 }
