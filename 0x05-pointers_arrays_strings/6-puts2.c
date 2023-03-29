@@ -5,8 +5,10 @@
  */
 void puts2(char *str)
 {
-	/* isn't memory unsafe
-	 * won't check one slot out of bound as && short-circuits first checking */
+	/**
+	 * isn't memory unsafe
+	 * won't check one slot out of bound as && short-circuits first checking
+	 */
 	while (*str != 0 && *(str + 1) != 0)
 	{
 		_putchar(*(str));
