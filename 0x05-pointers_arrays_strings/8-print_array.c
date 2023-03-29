@@ -16,7 +16,7 @@ void print_array(int *a, int n)
 	}
 	else
 	{
-		putchar('');
+		putchar(0);
 	}
 	putchar('\n');
 }
