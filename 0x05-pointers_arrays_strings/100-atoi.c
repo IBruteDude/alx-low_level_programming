@@ -1,3 +1,4 @@
+#include <ctype.h>
 #include "main.h"
 #define dig(c) ('0' <= c && c <= '9')
 /**
@@ -13,7 +14,7 @@ int _atoi(char *s)
 
 	while (!dig(*s))
 		s++;
-	if (*(s - 1) == '-')
+	if (*(s - 1) == '-' && !isspace(*(s - 2)))
 		neg = 1;
 	while (dig(*s))
 	{
