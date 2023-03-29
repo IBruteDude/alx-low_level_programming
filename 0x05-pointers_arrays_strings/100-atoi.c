@@ -1,3 +1,4 @@
+#include <limits.h>
 #include <ctype.h>
 #include "main.h"
 #define dig(c) (('0' <= c && c <= '9'))
@@ -27,7 +28,7 @@ int _atoi(char *s)
 		pow *= 10;
 		s++;
 	}
-	p = s;
+	p = s - 1;
 	s -= dl;
 	while (s != p)
 	{
@@ -35,5 +36,9 @@ int _atoi(char *s)
 		pow /= 10;
 		s++;
 	}
+	if (*s == 8 && (neg % 2))
+		return INT_MIN;
+	else
+		n += pow * (*s - '0');
 	return ((neg % 2) ? -n : n);
 }
