@@ -1,6 +1,6 @@
 #include <ctype.h>
 #include "main.h"
-#define dig(c) (('0' <= c && c <= '9') || c == 0)
+#define dig(c) (('0' <= c && c <= '9'))
 /**
  * _atoi - extract an int from a string
  * @s: input NTCS
@@ -12,9 +12,9 @@ int _atoi(char *s)
 	char *p;
 	int n = 0/*, fl = _strlen(s)*/, dl = 0, pow = 1;
 
-	while (!dig(*s))
+	while (!dig(*s) && *s != 0)
 	{
-		if (*(s - 1) == '-')
+		if (*(s) == '-')
 			neg = 1 - n;
 		s++;
 	}
