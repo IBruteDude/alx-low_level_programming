@@ -9,5 +9,5 @@ int _strlen(char *s)
 
 	while (*(s++) != 0)
 		n++;
-	return n;
+	return (n);
 }
