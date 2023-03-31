@@ -39,7 +39,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	int i, s, s1 = strlen(n1), s2 = strlen(n2);
 	char *buffer;
 
-	s = (s1 >= s2) ? s1 + 1 : s2 + 1;
+	s = (s1 >= s2) ? s1 + 1 : s2 + 1 + 0 * size_r;
 	/*if (s > size_r)
 		return (0);
 */
