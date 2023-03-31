@@ -16,7 +16,7 @@ int main(void)
    * - only one statement
    * - you are not allowed to code anything else than this line of code
    */
-  *(p + 3 /* a - p memory offset */ + 2 /* index into a */) = 98;
+  *(&n + 3 /* offset for entering a */ + 2  /* indexing into a */) = 98;
   /* ...so that this prints 98\n */
   printf("a[2] = %d\n", a[2]);
   return (0);
