@@ -39,7 +39,10 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	int i, s, s1 = strlen(n1), s2 = strlen(n2);
 	char *buffer;
 
-	/* if result buffer size doesn't have space for NULL char and overflow bit return NULL */
+	/**
+	 * if result buffer size doesn't have space for
+	 * NULL char and overflow bit return NULL
+	 */
 	s = (s1 >= s2) ? s1 + 1 : s2 + 1;
 	if (s + 1 > size_r)
 		return (NULL);
