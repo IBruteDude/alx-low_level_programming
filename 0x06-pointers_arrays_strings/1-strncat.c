@@ -1,9 +1,10 @@
 #include <string.h>
 /**
- * _strcat - string catenation
+ * _strncat - string catenation
  * @dest: destination
  * @src: source
  * @n: limit
+ * Description: concatenate atmost n from source
  * Return: destination pointer
  */
 char *_strncat(char *dest, char *src, int n)
