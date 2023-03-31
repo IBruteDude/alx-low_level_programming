@@ -1,27 +1,18 @@
+#include <ctype.h>
+/**
+ * leet - converts to leetspeak
+ * @s: input string
+ * Return: output string
+ */
 char *leet(char *s)
 {
-	int i;
+	int i, j;
+	char letter[] = {'a', 'e', 'o', 't', 'l'};
+	char num[] = {'4', '3', '0', '7', '1'};
 
 	for (i = 0; s[i] != 0; i++)
-	{
-		switch (s[i])
-		{
-		case 'a': case 'A':
-			s[i] = '4';
-			break;
-		case 'e': case 'E':
-			s[i] = '3';
-			break;
-		case 'o': case 'O':
-			s[i] = '0';
-			break;
-		case 't': case 'T':
-			s[i] = '7';
-			break;
-		case 'l': case 'L':
-			s[i] = '1';
-			break;
-		}
-	}
+		for (j = 0; j < 5; j++)
+			if (s[i] == letter[j] || s[i] == toupper(letter[j]))
+				s[i] = num[j];
 	return (s);
 }
