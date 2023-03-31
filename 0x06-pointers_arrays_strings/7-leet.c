@@ -4,7 +4,7 @@ char *leet(char *s)
 
 	for (i = 0; s[i] != 0; i++)
 	{
-		switch(s[i])
+		switch (s[i])
 		{
 		case 'a': case 'A':
 			s[i] = '4';
