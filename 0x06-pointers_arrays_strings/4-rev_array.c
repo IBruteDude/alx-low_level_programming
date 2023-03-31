@@ -21,5 +21,5 @@ void reverse_array(int *a, int n)
 	int i;
 
 	for (i = 0; i < (n + 1) / 2; ++i)
-		swap(a + i, a + (n - 1) -i);
+		swap_int(a + i, a + (n - 1) - i);
 }
