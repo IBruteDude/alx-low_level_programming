@@ -6,14 +6,14 @@
  */
 char *rot13(char *s)
 {
-	int i;
+	int i, j;
 
 	for (i = 0; s[i] != '\0'; ++i)
 	{
-		if (('a' <= s[i] && s[i] < 'n') || ('A' <= s[i] && s[i] < 'N'))
-			s[i] += 13;
-		else if (isalpha(s[i]))
-			s[i] -= 13;
+		if (isupper(s[i]))
+			s[i] = ((s[i] - 'A') + 13) % 26 + 'A';
+		for (j = 0; j < 1 && islower(s[i]); j++)
+			s[i] = ((s[i] - 'a') + 13) % 26 + 'a';
 	}
 	return (s);
 }
