@@ -40,9 +40,9 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	char *buffer;
 
 	s = (s1 >= s2) ? s1 + 1 : s2 + 1;
-	if (s > size_r)
+	/*if (s > size_r)
 		return (0);
-
+*/
 	if (s1 == s2)
 	{
 		add_int_strings(n1, n2, r, s);
