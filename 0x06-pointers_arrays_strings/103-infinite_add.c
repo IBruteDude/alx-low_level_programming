@@ -36,10 +36,13 @@ inline void add_int_strings(char *n1, char *n2, char *r, int s)
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int i, rlen, s, s1 = strlen(n1), s2 = strlen(n2);
+	int i, s, s1 = strlen(n1), s2 = strlen(n2);
 	char *buffer;
 
 	s = (s1 >= s2) ? s1 + 1 : s2 + 1;
+	if (s > size_r)
+		return (0);
+
 	if (s1 == s2)
 	{
 		add_int_strings(n1, n2, r, s);
@@ -64,8 +67,5 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		}
 		free(buffer);
 	}
-	rlen = strlen(r);
-	if ((rlen + 1) > size_r)
-		return (0);
 	return (r);
 }
