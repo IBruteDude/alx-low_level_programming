@@ -64,7 +64,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		}
 		free(buffer);
 	}
-	if (s > size_r - 1)
+	if (strlen(r) + 1 > size_r)
 		return (0);
 	return (r);
 }
