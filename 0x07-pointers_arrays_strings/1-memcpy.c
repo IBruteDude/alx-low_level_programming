@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _memset - set first n bytes of n to b
+ * _memcpy - set first n bytes of n to b
  * @dest: destination string
  * @src: source string
  * @n: number of bytes to be copied
