@@ -6,10 +6,10 @@
  * @n: number of bytes to be filled
  * Return: output string
  */
-void *_memset(void *s, char b, unsigned int n)
+char *_memset(char *s, char b, unsigned int n)
 {
 	while (n--)
-		*((char *) s + n) = b;
+		s[n] = b;
 	return (s);
 }
 
