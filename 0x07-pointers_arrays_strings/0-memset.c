@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * _memset - set first n bytes of n to b
  * @s: input string
