@@ -18,7 +18,7 @@ char *_strpbrk(char *s, char *accept)
 		if (accept[j] != '\0')
 			break;
 	}
-	if (*(s-1) == '\0')
+	if (*(s - 1) == '\0')
 		return ((void *) 0);
 	return (s - 1);
 }
