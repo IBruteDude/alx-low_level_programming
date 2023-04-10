@@ -5,7 +5,7 @@
  * @argv: argument values
  * Return: 0 successful exit status
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
 	printf("%s\n", argv[argc - argc]);
 	return (0);
