@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - gets arguments to print the name of the program
+ * main - gets arguments to print the number of arguments
  * @argc: argument count
  * @argv: argument values
  * Return: 0 successful exit status
