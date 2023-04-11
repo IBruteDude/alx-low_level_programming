@@ -21,6 +21,11 @@ char *str_concat(char *s1, char *s2)
 		cat = malloc(strlen(s2) + 1);
 		strcpy(cat, s2);
 	}
+	if (s1 == NULL && s2 == NULL)
+	{
+		cat = malloc(1);
+		*cat = '\0';
+	}
 	if (s1 != NULL && s2 != NULL)
 	{
 		cat = malloc(strlen(s1) + strlen(s2) + 1);
