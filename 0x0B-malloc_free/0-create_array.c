@@ -1,4 +1,10 @@
 #include <stdlib.h>
+/**
+ * create_array - creates an array
+ * @size: array size
+ * @c: initialization character
+ * Return: address of the array if successful, NULL if unsuccessful
+ */
 char *create_array(unsigned int size, char c)
 {
 	if (size > 0)
@@ -11,6 +17,6 @@ char *create_array(unsigned int size, char c)
 	}
 	else
 	{
-		return (NULL):
+		return (NULL);
 	}
 }
