@@ -3,7 +3,7 @@ for file in "$@"
 do
 	betty $file \
 	&& echo -e \
-	&& gcc $file \
+	&& gcc -Wall -Werror -pedantic -Wextra -std=gnu89 $file \
 	&& echo -e \
 	&& ./a.out \
 	&& echo -e \

@@ -1,0 +1,12 @@
+#include "main.h"
+
+/**
+ * main - Entry point to code
+ *
+ * Return: 0 exit status
+ */
+
+int main(void)
+{
+	return (0);
+}
