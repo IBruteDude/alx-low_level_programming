@@ -8,20 +8,30 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, n = 0;
-	char **fptr = malloc(sizeof(char *));
+	int i, j, s, n = 0;
+	/* char **fptr = malloc(sizeof(char *)); */
 
 	for (i = 1; i < argc; ++i)
 	{
+		s = strlen(argv[i]);
+		for (j = 0; j < s; j++)
+			if (argv[i][j] < '0'  || '9' < argv[i][j])
+			{
+				printf("Error\n");
+				return (1);
+			}
+
 		n += strtol(argv[i], fptr, 10);
-		if (*fptr == argv[i])
-		{
-			printf("Error\n");
-			free(fptr);
-			return (1);
-		}
+		/**
+		 *if (*fptr == argv[i])
+		 *{
+		 *	printf("Error\n");
+		 *	free(fptr);
+		 *	return (1);
+		 *}
+		 */
 	}
 	printf("%i\n", n);
-	free(fptr);
+	/* free(fptr); */
 	return (0);
 }
