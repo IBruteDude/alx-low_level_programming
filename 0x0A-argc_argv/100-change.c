@@ -19,14 +19,19 @@ int main(int argc, char *argv[])
 			printf("0\n");
 			return (0);
 		}
-
+		
 		for (i = 0; i < 5; ++i)
 		{
-			change += n / curr[i];
-			n = n % curr[i];
+			if (n >= curr[i])
+			{
+				change += n / curr[i];
+				n = n % curr[i];
+				if (n % curr[i] == 0)
+					break;
+			}
 		}
 
-		printf("%i\n", change);
+		printf("%d\n", change);
 		return (0);
 	}
 	else
