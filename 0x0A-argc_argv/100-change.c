@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 	}
 	s = strlen(argv[1]);
 	for (i = 0; i < s; ++i)
-		if (!(argv[1][i] == '-') && (argv[1][i] < '0' || '9' < argv[1][i]))
+		if (!(argv[1][0] == '-') && (argv[1][i] < '0' || '9' < argv[1][i]))
 		{
 			printf("Error\n");
 			return (1);
