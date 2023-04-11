@@ -19,13 +19,18 @@ int main(int argc, char *argv[])
 	}
 	s = strlen(argv[1]);
 	for (i = 0; i < s; ++i)
-		if (argv[1][i] < '0' || '9' < argv[1][i])
+		if (!(argv[1][i] == '-') && (argv[1][i] < '0' || '9' < argv[1][i]))
 		{
 			printf("Error\n");
 			return (1);
 		}
 
 
+	if (n <= 0)
+	{
+		printf("0\n");
+		return (0);
+	}
 
 	for (i = 0; i < 5; ++i)
 	{
