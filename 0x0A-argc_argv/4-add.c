@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 /**
  * main - gets arguments to print multiplication of its arguments
  * @argc: argument count
@@ -21,7 +22,7 @@ int main(int argc, char *argv[])
 				return (1);
 			}
 
-		n += strtol(argv[i], fptr, 10);
+		n += atoi(argv[i]) /* strtol(argv[i], fptr, 10) */;
 		/**
 		 *if (*fptr == argv[i])
 		 *{
