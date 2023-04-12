@@ -11,7 +11,7 @@ char **strtow(char *str)
 	int i = 0, n = 0;
 	char *s = str, *word, **words = NULL;
 
-	if (s == NULL)
+	if (s == NULL || *s == '\0')
 		return (NULL);
 	while (s[i])
 	{
@@ -36,18 +36,12 @@ char **strtow(char *str)
 		while (!isspace(*(s++)))
 			i++;
 		s -= i + 1;
-		if (i > 0)
-		{
-			word = malloc(i + 1);
-			if (word == NULL)
-				return (NULL);
-			strncpy(word, s, i);
-			if (strcmp(word, ""))
-			{
-				words[n] = word;
-				n++;
-			}
-		}
+		word = malloc(i + 1);
+		if (word == NULL)
+			return (NULL);
+		strncpy(word, s, i);
+		if (strcmp(word, ""))
+			words[n++] = word;
 		s += i + 1;
 	}
 	words[n] = NULL;
