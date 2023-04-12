@@ -29,10 +29,10 @@ char **strtow(char *str)
 		word = malloc(i + 1);
 		strncpy(word, s, i);
 		s += i + 1;
-		if (*(s))
+		/* if (*(s)) */
 			words[n] = word;
 		n++;
 	}
-	// words = realloc(words, sizeof(char *) * n);
+	/* words = realloc(words, sizeof(char *) * n); */
 	return (words);
 }
