@@ -43,7 +43,7 @@ int main(void)
 
 	h = 20;
 	w = 20;
-	grid = alloc_grid(h, w);
+	grid = alloc_grid(48, 2);
 	if (grid == NULL)
 	{
 		return (1);
