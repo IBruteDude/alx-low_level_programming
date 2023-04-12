@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
+#include <alloca.h>
 /**
  * alloc_grid - allocate a grid of ints
  * @width: width
@@ -9,37 +10,14 @@
 int **alloc_grid(int width, int height)
 {
 	int si = sizeof(int), sip = sizeof(int *);
-	int i, j, **matrix, **temp;
+	int i, j, **matrix;
 
 	if (height == 0 || width == 0)
 		return (NULL);
-
-	/* allocate space for a block of pointers to adjacent int blocks */
-	matrix = malloc((sip * height) + (si * height * width));
-	temp = malloc(sip * height);
-	if (matrix == NULL || temp == NULL)
-		return (NULL);
-	for (i = 0; i < height; ++i)
-	{
-		temp[i] = matrix[i] = malloc(si * width);
-		memcpy(matrix[i], (int *) 	/* cast back to a pointer */
-		/* manipulate address of matrix with integer arithmetic */
-			       	(((long) &matrix)
-		/* pointer array offset */
-				+ (height * sip)
-		/* integer arrays offset */
-				+ (i * width * si)) 
-				, sip);
-	}
+	matrix = malloc(sip * height);
 	/* initialize all with zeros */
-	si = 0;
 	for (i = 0; i < height; ++i)
-	{
-		for (j = 0; j < width; ++j)
-			matrix[i][j] = si++;
-		free(temp[i]);
-	}
-	free(temp);
+		matrix[i] = alloca(si * width);
 
 	/**
 	for (i = 0; i < height; ++i)
@@ -56,10 +34,12 @@ int **alloc_grid(int width, int height)
 		}
 		else
 		{
-			for (j = 0; j < width; ++j)
-				matrix[i][j] = 0;
 		}
 	}
 	*/
+	si = 0;
+	for (i = 0; i < height; ++i)
+		for (j = 0; j < width; ++j)
+			matrix[i][j] = si++;
 	return (matrix);
 }
