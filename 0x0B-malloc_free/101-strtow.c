@@ -10,7 +10,17 @@ char **strtow(char *str)
 {
 	int i, n = 0;
 	char *s = str, *word;
-	char **words = calloc(sizeof(char *) * (strlen(str) / 2), sizeof(char *));
+	while (s[i])
+	{
+		while (isspace(s[i]))
+			i++;
+		if (s[i])
+			n++;
+		while (s[i] && !isspace(s[i]))
+			i++;
+	}
+	char **words = calloc(sizeof(char *) * n, sizeof(char *));
+	n = 0;
 
 	if (words == NULL)
 		return (NULL);
@@ -38,6 +48,5 @@ char **strtow(char *str)
 	}
 	if (n == 0)
 		return (NULL);
-	words = realloc(words, sizeof(char *) * n + 1);
 	return (words);
 }
