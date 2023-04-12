@@ -36,16 +36,19 @@ char **strtow(char *str)
 		while (!isspace(*(s++)))
 			i++;
 		s -= i + 1;
-		word = malloc(i + 1);
-		if (word == NULL)
-			return (NULL);
-		strncpy(word, s, i);
-		s += i + 1;
-		if (strcmp(word, ""))
+		if (i > 0)
 		{
-			words[n] = word;
-			n++;
+			word = malloc(i + 1);
+			if (word == NULL)
+				return (NULL);
+			strncpy(word, s, i);
+			if (strcmp(word, ""))
+			{
+				words[n] = word;
+				n++;
+			}
 		}
+		s += i + 1;
 	}
 	words[n] = NULL;
 	return (words);
