@@ -35,6 +35,8 @@ char **strtow(char *str)
 			n++;
 		}
 	}
-	/* words = realloc(words, sizeof(char *) * n); */
+	if (n == 0)
+		return (NULL);
+	words = realloc(words, sizeof(char *) * n);
 	return (words);
 }
