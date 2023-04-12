@@ -29,7 +29,7 @@ char **strtow(char *str)
 		word = malloc(i + 1);
 		strncpy(word, s, i);
 		s += i + 1;
-		if (!strcmp(word, ""))
+		if (strcmp(word, ""))
 		{
 			words[n] = word;
 			n++;
@@ -37,6 +37,5 @@ char **strtow(char *str)
 	}
 	if (n == 0)
 		return (NULL);
-	words = realloc(words, sizeof(char *) * n);
 	return (words);
 }
