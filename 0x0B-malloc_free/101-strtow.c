@@ -21,9 +21,9 @@ char **strtow(char *str)
 	while (*(s))
 	{
 		i = 0;
-		while(!isalpha(*s))
+		while(isspace(*s))
 			s++;
-		while(isalpha(*(s++)))
+		while(!isspace(*(s++)))
 			i++;
 		s -= i + 1;
 		word = malloc(i + 1);
@@ -33,6 +33,6 @@ char **strtow(char *str)
 			words[n] = word;
 		n++;
 	}
-	words = realloc(words, sizeof(char *) * n);
+	// words = realloc(words, sizeof(char *) * n);
 	return (words);
 }
