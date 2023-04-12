@@ -8,8 +8,11 @@
  */
 char **strtow(char *str)
 {
-	int i, n = 0;
-	char *s = str, *word;
+	int i = 0, n = 0;
+	char *s = str, *word, **words = NULL;
+
+	if (s == NULL)
+		return (NULL);
 	while (s[i])
 	{
 		while (isspace(s[i]))
@@ -19,16 +22,12 @@ char **strtow(char *str)
 		while (s[i] && !isspace(s[i]))
 			i++;
 	}
-	char **words = calloc(sizeof(char *) * n, sizeof(char *));
-	n = 0;
-
+	if (n != 0)
+		words = malloc(sizeof(char *) * n + 1);
 	if (words == NULL)
 		return (NULL);
-	if (str == NULL)
-	{
-		free(words);
-		return (NULL);
-	}
+	n = 0;
+
 	while (*(s))
 	{
 		i = 0;
@@ -38,6 +37,8 @@ char **strtow(char *str)
 			i++;
 		s -= i + 1;
 		word = malloc(i + 1);
+		if (word == NULL)
+			return (NULL);
 		strncpy(word, s, i);
 		s += i + 1;
 		if (strcmp(word, ""))
@@ -46,7 +47,6 @@ char **strtow(char *str)
 			n++;
 		}
 	}
-	if (n == 0)
-		return (NULL);
+	words[n] = NULL;
 	return (words);
 }
