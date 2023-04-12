@@ -29,8 +29,11 @@ char **strtow(char *str)
 		word = malloc(i + 1);
 		strncpy(word, s, i);
 		s += i + 1;
-		words[n] = word;
-		n++;
+		if (strcmp(word, ""))
+		{
+			words[n] = word;
+			n++;
+		}
 	}
 	if (n == 0)
 		return (NULL);
