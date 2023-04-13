@@ -1,7 +1,11 @@
 #include <stdlib.h>
 #include <string.h>
 /**
- * string_nconcat - concatenates at most n chars from 
+ * string_nconcat - concatenates at most n chars from s2 to s1
+ * @s1: main string
+ * @s2: additional string
+ * @n: number of chars to concatenate
+ * Return: newly created string or NULL
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
@@ -19,7 +23,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		*s2 = '\0';
 		s2N = 1;
 	}
-	str = malloc(sizeof(s1) + ((sizeof(s2) < n) ? sizeof(s2) - 1 : n));
+	str = malloc(sizeof(s1) + ((sizeof(s2) - 1 < n) ? sizeof(s2) - 1 : n));
 	if (str == NULL)
 		return (NULL);
 	strcpy(str, s1);

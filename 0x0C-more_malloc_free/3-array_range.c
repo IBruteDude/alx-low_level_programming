@@ -8,6 +8,7 @@
 int *array_range(int min, int max)
 {
 	int size = max - min + 1, *p;
+
 	if (min > max)
 		return (NULL);
 	p = malloc(sizeof(int) * size);
