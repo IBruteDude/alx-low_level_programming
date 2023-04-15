@@ -51,17 +51,12 @@ int main(int argc, char **argv)
 	int i, s1, s2;
 
 	if (argc != 3)
-	{
-		printf("Error\n");
-		exit(98);
-	}
+		printf("Error\n"), exit(98);
 	n1 = argv[1];
 	n2 = argv[2];
 	for (i = 0; n1[i] != '\0'; i++)
 		if (!isdigit(n1[i]))
-		{
 			failed = 1;
-		}
 	for (i = 0; n2[i] != '\0'; i++)
 		if (!isdigit(n2[i]))
 			failed = 1;
@@ -76,17 +71,14 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(98);
 	}
-
 	/* All safe */
 	for (i = 0; i < s1 + s2; i++)
 		res[i] = '0';
-
 	/* All ready */
 	multiply(n1, n2, res);
 	i = s1 + s2;
 	while (i--)
 		_putchar(res[s1 + s2 - 1 - i]);
-	_putchar('\n');
-	free(res);
+	_putchar('\n'), free(res);
 	return (0);
 }
