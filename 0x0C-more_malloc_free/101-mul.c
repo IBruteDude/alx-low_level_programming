@@ -11,25 +11,19 @@
  */
 void multiply(char *n1, char *n2, char *res)
 {
-	int *a, *b, *product, s1 = strlen(n1), s2 = strlen(n2), a_i, b_i, carry;
+	int *product, s1 = strlen(n1), s2 = strlen(n2), a_i, b_i, carry;
 
-	a = alloca(sizeof(int) * (s1 + 1)), b = alloca(sizeof(int) * (s2 + 1));
 	product = calloc(s1 + s2 + 1, sizeof(int));
-
 	if (product == NULL)
 		printf("Error\n"), exit(98);
-
-	for (a_i = 1; a_i <= s1; a_i++)
-		a[a_i] = n1[s1 - a_i] - '0';
-	for (b_i = 1; b_i <= s2; b_i++)
-		b[b_i] = n2[s2 - b_i] - '0';
 
 	for (b_i = 1; b_i <= s2; b_i++)
 	{
 		carry = 0;
 		for (a_i = 1; a_i <= s1; a_i++)
 		{
-			product[a_i + b_i - 1] += carry + (a[a_i] * b[b_i]);
+			product[a_i + b_i - 1] += carry +
+			       	((n1[s1 - a_i] - '0') * (n2[s2 - b_i] - '0'));
 			carry = product[a_i + b_i - 1] / 10;
 			product[a_i + b_i - 1] %= 10;
 		}
