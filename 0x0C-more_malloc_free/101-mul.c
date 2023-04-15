@@ -32,8 +32,11 @@ void multiply(char *n1, char *n2, char *res)
 		}
 		res[s2 - b_i] += carry;
 	}
-	if (res[0] == '0')
-		memcpy(res, res + 1, s1 + s2);
+	while (res[0] == '0')
+	{
+		memcpy(res, res + 1, s1 + --s2);
+		res[s1 + s2 - 1] = '\0';
+	}
 }
 
 /**
