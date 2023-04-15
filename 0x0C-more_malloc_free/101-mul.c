@@ -39,8 +39,6 @@ void multiply(char *n1, char *n2, char *res)
 	for (a_i = 0; a_i < s1 + s2; a_i++)
 		res[a_i] = product[s1 + s2 - a_i] + '0';
 	free(product);
-	free(a);
-	free(b);
 	if (res[0] == '0')
 		memcpy(res, res + 1, s1 + s2);
 }
@@ -89,7 +87,7 @@ int main(int argc, char *argv[])
 	res[s1 + s2] = '\0';
 
 	/* All ready */
-	multiply2(n1, n2, res);
+	multiply(n1, n2, res);
 	printf("%s\n", res);
 	free(res);
 	return (0);
