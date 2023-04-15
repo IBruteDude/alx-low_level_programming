@@ -4,7 +4,12 @@
 #include <ctype.h>
 
 
-
+/**
+ * multiply - my scuffed f****** implementation of the algorithm
+ * @n1: 1st input number
+ * @n2: 2nd input number
+ * @res: result
+ */
 void multiply(char *n1, char *n2, char *res)
 {
 	int idx, s1 = strlen(n1), s2 = strlen(n2), x, y, prod, carry;
@@ -32,19 +37,35 @@ void multiply(char *n1, char *n2, char *res)
 	if (res[0] == '0')
 		memcpy(res, res + 1, s1 + s2);
 }
-
+/**
+ * multiply2 - precise implementation of the multiplication algorithm
+ * @n1: 1st input number
+ * @n2: 2nd input number
+ * @res: result
+ */
 void multiply2(char *n1, char *n2, char *res)
 {
 	int *a, *b, *product, s1 = strlen(n1), s2 = strlen(n2), a_i, b_i, carry;
-	
+
 	a = malloc(sizeof(int) * (s1 + 1)), b = malloc(sizeof(int) * (s2 + 1));
 	product = calloc(s1 + s2 + 1, sizeof(int));
+
+	if (product == NULL || a == NULL || b == NULL)
+	{
+		if (product != NULL)
+			free(product);
+		if (a != NULL)
+			free(a);
+		if (b != NULL)
+			free(b);
+		exit(98);
+	}
 
 	for (a_i = 1; a_i <= s1; a_i++)
 		a[a_i] = n1[s1 - a_i] - '0';
 	for (b_i = 1; b_i <= s2; b_i++)
 		b[b_i] = n2[s2 - b_i] - '0';
-	
+
 	for (b_i = 1; b_i <= s2; b_i++)
 	{
 		carry = 0;
@@ -66,7 +87,13 @@ void multiply2(char *n1, char *n2, char *res)
 		memcpy(res, res + 1, s1 + s2);
 }
 
-int main(int argc, char* argv[])
+/**
+ * main - accepts and checks user input for safety
+ * @argc: number of arguments
+ * @argv: arguments array
+ * Return: exit status
+ */
+int main(int argc, char *argv[])
 {
 	char failed = 0, *res, *n1, *n2;
 	int i, s1, s2;
