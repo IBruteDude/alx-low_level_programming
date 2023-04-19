@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -25,7 +26,7 @@ void strip(char *s, int si)
  */
 void multiply(char *n1, char *n2, char *res)
 {
-	int i, j, currpass = 0, nextpass = 0, s, s1 = strlen(n1), s2 = strlen(n2), prod;
+	int i, j, currpass = 0, nextpass = 0, s, s1 = strlen(n1), s2 = strlen(n2);
 
 	s = s1 + s2;
 	for (i = 0; i < s; i++)
@@ -66,7 +67,15 @@ int main(int argc, char **argv)
 	strip(n1, s1);
 	strip(n2, s2);
 	res = (char *) malloc(s1 + s2);
-
+	if (res == NULL)
+		failed = 1;
+	if (failed)
+	{
+		if (res != NULL)
+			free(res);
+		printf("Error\n");
+		exit(98);
+	}
 	/* All safe */
 	for (i = 0; i < s1 + s2; i++)
 		res[i] = '0';
