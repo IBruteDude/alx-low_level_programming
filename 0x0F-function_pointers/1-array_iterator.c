@@ -10,5 +10,6 @@ void array_iterator(int *array, size_t size, void (*action)(int))
 	typeof(size) i;
 
 	for (i = 0; i < size; i++)
-		action(array[i]);
+		if(action != NULL)
+			action(array[i]);
 }
