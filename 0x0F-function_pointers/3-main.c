@@ -12,10 +12,16 @@ int main(int argc, char **argv)
 	int a, b, (*f)(int, int);
 
 	if (argc != 4)
-		printf("Error 98\n"), exit(98);
+	{
+		printf("Error\n");
+		exit(98);
+	}
 	f = get_op_func(argv[2]);
 	if (f == NULL)
-		printf("Error 99\n"), exit(99);
+	{
+		printf("Error\n");
+		exit(99);
+	}
 	a = atoi(argv[1]), b = atoi(argv[3]);
 	printf("%d\n", f(a, b));
 	return (0);
