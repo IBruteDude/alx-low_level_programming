@@ -12,7 +12,7 @@ void print_all(const char * const format, ...)
 	char c;
 
 	va_start(va, format);
-	if (format == NULL || *format == '\0')
+	if (format == NULL)
 	{
 		putchar('\n');
 		return;
