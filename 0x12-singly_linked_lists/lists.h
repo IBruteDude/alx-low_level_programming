@@ -1,7 +1,8 @@
 
-#ifndef LIST_H
-#define LIST_H
-#define size_t unsigned int
+#ifndef LISTS_H
+#define LISTS_H
+#include <stdlib.h>
+#include <stddef.h>
 /**
  * struct list_s - singly linked list
  * @str: string - (malloc'ed string)
