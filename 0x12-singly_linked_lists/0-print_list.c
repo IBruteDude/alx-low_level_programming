@@ -25,7 +25,9 @@ void print(const char *format, int n, char *str)
 						_putchar('0' + n / mask), n %= mask, mask /= 10;
 				}
 				else
+				{
 					_putchar('0');
+				}
 				break;
 			}
 			case 's':
