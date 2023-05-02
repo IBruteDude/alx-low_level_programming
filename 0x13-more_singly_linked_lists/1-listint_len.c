@@ -1,14 +1,10 @@
 #include "lists.h"
-size_t listint_len(const listint_t *h);
-#include "lists.h"
-#include <stdio.h>
-
 /**
- * print_listint - prints the contents of a list of integers
+ * listint_len - returns the length of an int list
  * @h: input list
  * Return: number of elements
  */
-size_t print_listint(const listint_t *h)
+size_t listint_len(const listint_t *h)
 {
 	size_t i = 0;
 
