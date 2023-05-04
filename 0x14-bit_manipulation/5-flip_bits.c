@@ -7,6 +7,7 @@
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
 	unsigned int i, count = 0;
+
 	for (i = 0; i < sizeof(n) * 8; i++)
 		count += !!((1 << i) & (n ^ m));
 	return (count);
