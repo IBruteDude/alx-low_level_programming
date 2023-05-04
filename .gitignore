@@ -1,4 +1,6 @@
 Betty/
 /*/a.out
 /*/a.exe
+/*/vgcore.*
 mains/
+*-main.c
