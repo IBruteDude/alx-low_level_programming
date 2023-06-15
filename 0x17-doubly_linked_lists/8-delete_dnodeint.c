@@ -1,4 +1,11 @@
 #include "lists.h"
+/**
+ * delete_dnodeint_at_index - deletes the n'th node inside a doubly linked list
+ *
+ * @head: input list head address
+ * @index: index to delete the node
+ * Return: deletion status:- 1 on success, -1 on failure
+ */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
 	unsigned int i = 0;
