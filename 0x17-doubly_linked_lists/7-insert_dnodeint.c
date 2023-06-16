@@ -27,13 +27,13 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 	while (head != NULL)
 	{
-		if (idx == i)
+		if (idx == i + 1)
 		{
 			node = (dlistint_t *)malloc(sizeof(dlistint_t));
+			node->next = head->next;
+			node->prev = head;
 			node->n = n;
-			node->prev = head->prev;
-			head->prev = node;
-			node->next = head;
+			head->next = node;
 			return (node);
 		}
 		head = head->next;
