@@ -8,13 +8,13 @@
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-	hash_node_t *node = ht->array[key_index((const unsigned char *)key, ht->size)];
+	hash_node_t *n = ht->array[key_index((const unsigned char *)key, ht->size)];
 
-	while (node != NULL)
+	while (n != NULL)
 	{
-		if (strcmp(node->key, key) == 0)
-			return (node->value);
-		node = node->next;
+		if (strcmp(n->key, key) == 0)
+			return (n->value);
+		n = n->next;
 	}
 	return (NULL);
 }
