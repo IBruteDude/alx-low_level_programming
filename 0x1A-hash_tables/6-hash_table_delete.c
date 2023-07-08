@@ -7,8 +7,9 @@
 void hash_table_delete(hash_table_t *ht)
 {
 	hash_node_t **nodes = ht->array, *node, *next;
+	size_t i;
 
-	for (size_t i = 0; i < ht->size; i++)
+	for (i = 0; i < ht->size; i++)
 	{
 		node = nodes[i];
 		if (node != NULL)
