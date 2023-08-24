@@ -1,7 +1,16 @@
 #!/usr/bin/python3
+''' Module defining and testing the island_perimeter function '''
 
 
 def island_perimeter(grid):
+    """calculate the perimeter of the island in the grid
+
+    Args:
+        grid (list[int][int]): the input grid
+
+    Returns:
+        int: the perimeter of the grid islands
+    """
     grid = [[0, *row, 0] for row in grid]
     grid = [[0] * len(grid[0]), *grid, [0] * len(grid[0])]
     col_iter, row_iter = range(1, len(grid) - 1), range(1, len(grid[0]) - 1)
