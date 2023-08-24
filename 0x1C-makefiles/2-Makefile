@@ -1,0 +1,14 @@
+CC=gcc
+SRC=main.c school.c
+OBJ=main.o school.o
+NAME=school
+
+.PHONY: all
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+main.o: main.c
+	$(CC) main.c -c
+
+school.o: school.c
+	$(CC) school.c -c
