@@ -4,7 +4,9 @@ OBJ=main.o school.o
 NAME=school
 
 .PHONY: all
-all: $(OBJ)
+all: $(NAME)
+
+$(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 $(OBJ): $(SRC)

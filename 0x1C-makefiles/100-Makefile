@@ -1,31 +1,28 @@
-CC=gcc
+CC=gcc -Wall -Werror -Wextra -pedantic
 SRC=main.c school.c
 OBJ=$(SRC:.c=.o)
 NAME=school
 RM=rm
-CFLAGS=-Wall -Werror -Wextra -pedantic
-cc=$(CC)
-rmf=$(RM)
-src=$(SRC)
-obj=$(OBJ)
 
 .PHONY: all
-all: $(obj)
-	$(cc) $(CFLAGS) $(obj) -o $(NAME)
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
 
 .PHONY: clean
 clean: fclean oclean
 
 .PHONY: oclean
 oclean:
-	$(rmf) -f $(obj)
+	$(RM) -f $(OBJ)
 
 .PHONY: fclean
 fclean: oclean
-	$(rmf) -f *.swp *~ $(NAME)
+	$(RM) -f *.swp *~ $(NAME)
 
 .PHONY: re
-re: oclean $(obj) all
+re: oclean $(OBJ) all
 
-$(obj): $(src) m.h
-	$(cc) $(CFLAGS) $(src) -c
+$(OBJ): $(SRC) m.h
+	$(CC) $(SRC) -c
