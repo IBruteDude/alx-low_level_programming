@@ -1,5 +1,13 @@
 #include "main.h"
 
+/**
+ * skip_to - skip wildcards or a certain character
+ *
+ * @s1: the first string
+ * @s2p: the address of the second string
+ * @c: the character to skip
+ * Return: idk, recursion makes it work like this
+ */
 int skip_to(char *s1, char **s2p, char c)
 {
 	if (*s1 == '\0' && **s2p != '\0')
