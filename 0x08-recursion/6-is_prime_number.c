@@ -9,10 +9,10 @@
  */
 int helper_recursive(int n, int counter)
 {
+	if (counter >= n)
+		return (1);
 	if (n % counter == 0)
 		return (0);
-	if (counter > n)
-		return (1);
 	return (helper_recursive(n, counter + 2));
 }
 
