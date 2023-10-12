@@ -55,7 +55,7 @@ int exponential_search(int *array, size_t size, int value)
 
 	found_idx = binary_search(
 		array + (bound >> 1),
-		(bound + 1 <= size) ? (bound >> 1) + 1 : (size - (bound >> 1)),
+		(bound + 1 < size) ? (bound >> 1) + 1 : (size - (bound >> 1)),
 		value
 	);
 	if (found_idx == -1)
