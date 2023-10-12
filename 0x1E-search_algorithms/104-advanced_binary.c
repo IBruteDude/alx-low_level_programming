@@ -1,6 +1,6 @@
 #include "search_algos.h"
 /**
- * binary_search - searchs through an input array logarithmically
+ * __binary_search - searchs through an input array logarithmically
  *
  * @array: input array
  * @value: value to search for
@@ -25,7 +25,7 @@ int __binary_search(int *array, int value, size_t start, size_t end)
 	/* a little gpt help */
 	if (mid == start || array[mid - 1] != value)
 		return (mid);
-	return __binary_search(array, value, start, mid);
+	return (__binary_search(array, value, start, mid));
 }
 /**
  * advanced_binary - searchs through an input array logarithmically
